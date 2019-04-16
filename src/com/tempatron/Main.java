@@ -17,7 +17,7 @@ public class Main {
 
             int i;
 
-            for( i = firstUnsortedIndex;  i > 0 && intArray[i - 1] > newElement; i-- ){
+            for( i = firstUnsortedIndex ;  i > 0 && intArray[i - 1] > newElement ; i-- ){
                 intArray[i] = intArray[i - 1];
             }
             intArray[i] = newElement;
@@ -41,12 +41,13 @@ public class Main {
 
 
             //basically code for insertion sort when gap = 1 at the end
-            for(int i= gap; i < shellArray.length ; i++ ) {
+            for(int i= gap; i < shellArray.length ; i++ ) {  //for traversing array ahead of the gap
+
                 int newElement = shellArray[i];
 
                 int j = i;
 
-                while(j >= gap && shellArray[j - gap] > newElement){
+                while(j >= gap && shellArray[j - gap] > newElement){   //shifting values.
                     shellArray[j] = shellArray[j - gap];
                     j -= gap;
                 }
